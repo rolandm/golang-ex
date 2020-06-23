@@ -7,7 +7,7 @@ intended to be used with an evolving [Golang Source-to-Image builder image](http
 
 Once the image-stream is loaded into OpenShift, you can easily deploy it by doing:
 
-    $ oc new-app golang~https://github.com/rmuller/golang-ex.git
+    $ oc new-app --name golang-app golang~https://github.com/rmuller/golang-ex.git
 
 The response message can be set by using the RESPONSE environment
 variable.  You will need to edit the pod definition and add an
@@ -24,10 +24,10 @@ To test from external network, you need to create router. Please refer to [Runni
 The container doesn't expose any ports, this will require you to expose it manually.
 For example:
 
-    $ oc expose dc/golang-ex --port=8888
+    $ oc expose dc/golang-app --port=8888
 
 and lastly if you want to expose a route, by doing:
 
-    $ oc expose service/golang-ex
+    $ oc expose service/golang-app
 
 
