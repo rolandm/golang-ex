@@ -7,7 +7,7 @@ intended to be used with an evolving [Golang Source-to-Image builder image](http
 
 Once the image-stream is loaded into OpenShift, you can easily deploy it by doing:
 
-    $ oc new-app --name golang-app golang~https://github.com/rmuller/golang-ex.git
+    $ oc new-app --name golang-app golang~https://github.com/rolandm/golang-ex.git
 
 The response message can be set by using the RESPONSE environment
 variable.  You will need to edit the pod definition and add an
